@@ -2,17 +2,32 @@ $.fn.MonoModal = function (options) {
   const MODAL_VISIBLE_CLASS = 'modal--visible';
   const OPEN_EVENT = 'open';
   const CLOSE_EVENT = 'toggle';
+  const ESC_KEYCODE = 27;
+  const DEFAULT_OPTIONS = {
+    closeOnEsc: true
+  };
 
   /**
    * The modal is hidden by default on initialization, so store the value in the modal object.
    */
   this.isVisible = false;
 
+  this.addEventListeners = () => {
+    this.find('*[data-action="close"]').on('click', () => this.hide());
+
+    $(window).on('keyup', (e) => {
+      if (e.which === ESC_KEYCODE && this.options.closeOnEsc) {
+        this.hide();
+      }
+    });
+  };
+
   /**
    * Store options in modal.
    */
   if ($.isPlainObject(options)) {
-    this.options = options;
+    this.options = $.extend(DEFAULT_OPTIONS, options);
+    this.addEventListeners();
   }
 
   /**
@@ -26,11 +41,12 @@ $.fn.MonoModal = function (options) {
   }
 
   /**
-   * Add events listeners on any elements in the modal DOM element that can close the modal.
+   * Add events listeners.
    */
 
   if (!$.isPlainObject(options) && $.isEmptyObject(options)) {
-    this.find('*[data-action="close"]').on('click', () => this.hide());
+    this.options = DEFAULT_OPTIONS;
+    this.addEventListeners();
   }
 
   /**
@@ -64,5 +80,7 @@ $.fn.MonoModal = function (options) {
 let $modal = $('#modal-one');
 let $triggerButton = $('#activate-modal');
 
-$modal.MonoModal();
-$triggerButton.on('click', $modal.MonoModal('show'));
+$modal.MonoModal({
+  closeOnEsc: false
+});
+$triggerButton.on('click', () => $modal.MonoModal('show'));
