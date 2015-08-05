@@ -12,6 +12,9 @@ $.fn.MonoModal = function (options) {
    */
   this.isVisible = false;
 
+  /**
+   * Adds event listeners that can influence the modal.
+   */
   this.addEventListeners = () => {
     this.find('*[data-action="close"]').on('click', () => this.hide());
 
@@ -23,15 +26,8 @@ $.fn.MonoModal = function (options) {
   };
 
   /**
-   * Store options in modal.
-   */
-  if ($.isPlainObject(options)) {
-    this.options = $.extend(DEFAULT_OPTIONS, options);
-    this.addEventListeners();
-  }
-
-  /**
-   * If options is a string, this is an action instead and should do something.
+   * If the given option is a string, we need to execute the method if it exists. If the given options are either empty
+   * or an object, we initialize the modal by settings the options and adding event listeners.
    */
   if ($.type(options) === 'string') {
     let method = this[options];
@@ -39,13 +35,8 @@ $.fn.MonoModal = function (options) {
       method();
     }
   }
-
-  /**
-   * Add events listeners.
-   */
-
-  if (!$.isPlainObject(options) && $.isEmptyObject(options)) {
-    this.options = DEFAULT_OPTIONS;
+  else {
+    this.options = $.extend(DEFAULT_OPTIONS, $.isPlainObject(options) ? options : {});
     this.addEventListeners();
   }
 
