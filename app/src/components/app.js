@@ -1,6 +1,7 @@
 import React from 'react';
 import OsxMenuBar from './osx-menu-bar';
 import Toolbar from './toolbar';
+import Canvas from './canvas';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
       <div className="app">
         <OsxMenuBar appTitle={this.state.appTitle} menuItems={this.state.menuItems} />
         <Toolbar title={this.state.toolbarTitle} />
+        <Canvas />
       </div>
     );
   }
