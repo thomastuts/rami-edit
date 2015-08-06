@@ -1,0 +1,47 @@
+$toolbar-height: 70px;
+$toolbar-background: #212121;
+$orb-dimensions: 12px;
+
+.toolbar {
+  background-color: $toolbar-background;
+  height: 70px;
+  position: relative;
+}
+
+.toolbar__window-title {
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  font-weight: $font-weight-light;
+  font-size: $font-size-small;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.toolbar__system-buttons {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.toolbar__system-button__orb {
+  width: $orb-dimensions;
+  height: $orb-dimensions;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  border: 1px solid;
+
+  &--close {
+    background-color: $red;
+    border-color: darken($red, 20%);
+  }
+  &--minimize {
+    background-color: $yellow;
+    border-color: darken($yellow, 20%);
+  }
+  &--maximize {
+    background-color: $green;
+    border-color: darken($green, 20%);
+  }
+}
