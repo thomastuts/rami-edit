@@ -5,21 +5,29 @@
   bottom: 0;
   right: 0;
   left: 0;
-  display: none;
   align-items: center;
   justify-content: center;
   background-color: rgba(#000, 0.5);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s;
 }
 
 .modal--visible {
-  display: flex;
-}
+  visibility: visible;
+  opacity: 1;
 
-.modal__header {
-
+  .modal__content {
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s;
+  }
 }
 
 .modal__content {
   background-color: #fff;
   padding: 20px;
+  transform: scale(0.7);
+  opacity: 0;
 }

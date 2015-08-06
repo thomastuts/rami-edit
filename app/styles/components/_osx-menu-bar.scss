@@ -1,0 +1,33 @@
+$menu-bar-height: 22px;
+$menu-bar-icon-height: 15px;
+
+.osx-menu-bar {
+  height: $menu-bar-height;
+  line-height: $menu-bar-height;
+  font-size: $font-size-regular;
+}
+
+.osx-menu-bar__menu__logo {
+  margin-left: 22px;
+
+  img {
+    height: $menu-bar-icon-height;
+    margin-bottom: -3px;
+  }
+}
+
+.osx-menu-bar--white {
+  background-color: $off-white;
+  color: $menubar-text-color;
+}
+
+.osx-menu-bar__menu {
+  li {
+    display: inline-block;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

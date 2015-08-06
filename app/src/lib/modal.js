@@ -61,9 +61,7 @@ $.fn.MonoModal = function (options) {
   /**
    * Toggles the dialog.
    */
-  this.toggle = () => {
-    this.isVisible ? this.hide() : this.show();
-  };
+  this.toggle = () => this.isVisible ? this.hide() : this.show();
 
   return this;
 };
