@@ -8,7 +8,8 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <div className="sidebar">
-
+        <div className="sidebar__close-anchor"></div>
+        <div className="sidebar__content"></div>
       </div>
     );
   }

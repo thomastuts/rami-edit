@@ -1,0 +1,17 @@
+$sidebar-width: 300px;
+$sidebar-background-color: #292929;
+$sidebar-close-anchor-width: 16px;
+
+.sidebar {
+  width: $sidebar-width;
+  display: flex;
+  position: relative;
+}
+
+.sidebar__close-anchor {
+  width: $sidebar-close-anchor-width;
+  background-color: $sidebar-background-color;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
