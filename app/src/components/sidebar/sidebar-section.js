@@ -15,7 +15,6 @@ export default class SidebarSection extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       let sectionHeight = $(this.refs.section.getDOMNode()).height();
-      console.log(sectionHeight);
       this.setState({
         actualHeight: sectionHeight,
         height: sectionHeight
@@ -46,7 +45,7 @@ export default class SidebarSection extends React.Component {
         <div className="sidebar__content__section__header" onClick={this.toggle}>
           {this.props.title}
           <div className="sidebar__content__section__header__toggle-icon">
-            <img src="img/angle-down.svg" />
+            <span className={this.state.isExpanded ? 'icon-angle-up' : 'icon-angle-down'}></span>
           </div>
         </div>
         <div className="sidebar__content__section__content" style={contentStyle}>{this.props.children}</div>

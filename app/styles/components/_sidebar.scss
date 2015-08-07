@@ -47,6 +47,12 @@ $sidebar-section-header-height: 40px;
   color: $sidebar-section-header-text-color;
   letter-spacing: 0.9px;
   padding-left: 20px;
+  transition: all .2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($sidebar-section-header-background, 3%);
+  }
 }
 
 .sidebar__content__section__header__toggle-icon {
