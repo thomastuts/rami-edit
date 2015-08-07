@@ -1,6 +1,9 @@
 $sidebar-width: 300px;
-$sidebar-background-color: #292929;
+$sidebar-background: #292929;
+$sidebar-section-header-background: #323232;
+$sidebar-section-header-text-color: #DDDDDD;
 $sidebar-close-anchor-width: 16px;
+$sidebar-section-header-height: 40px;
 
 .sidebar {
   width: $sidebar-width;
@@ -17,7 +20,7 @@ $sidebar-close-anchor-width: 16px;
 
 .sidebar__close-anchor {
   width: $sidebar-close-anchor-width;
-  background-color: $sidebar-background-color;
+  background-color: $sidebar-section-header-background;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -27,5 +30,46 @@ $sidebar-close-anchor-width: 16px;
   width: $sidebar-width - $sidebar-close-anchor-width - 2;
   margin-left: $sidebar-close-anchor-width + 2;
   //height: 50px;
-  background-color: $sidebar-background-color;
+  background-color: $sidebar-background;
+}
+
+.sidebar__content__section {
+
+}
+
+.sidebar__content__section__header {
+  position: relative;
+  height: $sidebar-section-header-height;
+  line-height: $sidebar-section-header-height;
+  background-color: $sidebar-section-header-background;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $sidebar-section-header-text-color;
+  letter-spacing: 0.9px;
+  padding-left: 20px;
+}
+
+.sidebar__content__section__header__toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+.sidebar__content__section__content {
+  padding: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group__label {
+  font-size: 12px;
+  width: 84px;
+}
+
+.input-group__input {
+  flex: 1;
+  align-items: center;
 }
