@@ -6,7 +6,7 @@ $sidebar-close-anchor-width: 16px;
 $sidebar-section-header-height: 40px;
 
 .sidebar {
-  width: $sidebar-width;
+  width: $sidebar-width + $sidebar-close-anchor-width + 2;
   display: flex;
   position: relative;
   margin-left: $sidebar-close-anchor-width + 2;
@@ -27,7 +27,7 @@ $sidebar-section-header-height: 40px;
 }
 
 .sidebar__content {
-  width: $sidebar-width - $sidebar-close-anchor-width - 2;
+  width: 100%;
   margin-left: $sidebar-close-anchor-width + 2;
   //height: 50px;
   background-color: $sidebar-background;

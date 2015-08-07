@@ -1,0 +1,23 @@
+.segmented-button-group {
+  display: flex;
+  flex: 1;
+
+  button {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: #3b3b3b;
+    color: #C6C6C6;
+    font-size: 12px;
+    padding: 4px 0;
+    margin-right: 2px;
+
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+    }
+
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+  }
+}

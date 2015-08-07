@@ -19,8 +19,8 @@ export default class SimpleSlider extends React.Component {
 
     return (
       <div className={sliderClasses.join(' ')}>
-        <input ref="slider" type="range" min={this.props.min} max={this.props.max} value={this.props.value} />
-        <input type="text" className="slider slider__text-input" value={this.props.value} />
+        <input ref="slider" type="range" min={this.props.min} max={this.props.max} defaultValue={this.props.value} />
+        <input type="text" className="slider slider__text-input" defaultValue={this.props.value} />
       </div>
     );
   }
