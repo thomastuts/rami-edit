@@ -63,6 +63,10 @@ $sidebar-section-header-height: 40px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .input-group__label {

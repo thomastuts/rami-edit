@@ -1,5 +1,6 @@
 import React from 'react';
 import SidebarLightingSection from './sidebar/lighting';
+import SidebarColorSection from './sidebar/colors';
 
 export default class Sidebar extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class Sidebar extends React.Component {
         <div className="sidebar__close-anchor" onClick={this.toggleSidebar}></div>
         <div className="sidebar__content">
           <SidebarLightingSection />
+          <SidebarColorSection />
         </div>
       </div>
     );
