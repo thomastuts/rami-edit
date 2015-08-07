@@ -6,6 +6,13 @@ $sidebar-close-anchor-width: 16px;
   width: $sidebar-width;
   display: flex;
   position: relative;
+  margin-left: $sidebar-close-anchor-width + 2;
+  margin-right: -$sidebar-width;
+  transition: all .2s;
+
+  &--visible {
+    margin-right: 0;
+  }
 }
 
 .sidebar__close-anchor {
@@ -14,4 +21,11 @@ $sidebar-close-anchor-width: 16px;
   position: absolute;
   top: 0;
   bottom: 0;
+}
+
+.sidebar__content {
+  width: $sidebar-width - $sidebar-close-anchor-width - 2;
+  margin-left: $sidebar-close-anchor-width + 2;
+  //height: 50px;
+  background-color: $sidebar-background-color;
 }
