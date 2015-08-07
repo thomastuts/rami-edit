@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarSection from './sidebar-section';
 
 export default class SidebarMetadataSection extends React.Component {
   constructor(props) {
@@ -7,14 +8,7 @@ export default class SidebarMetadataSection extends React.Component {
 
   render() {
     return (
-    <div className="sidebar__content__section">
-      <div className="sidebar__content__section__header">
-        Metadata
-        <div className="sidebar__content__section__header__toggle-icon">
-          <img src="img/angle-down.svg" />
-        </div>
-      </div>
-      <div className="sidebar__content__section__content">
+      <SidebarSection title={'Metadata'}>
         <div className="input-group">
           <label className="input-group__label">Created</label>
           <div className="input-group__input input-group__input--ready-only">
@@ -54,8 +48,7 @@ export default class SidebarMetadataSection extends React.Component {
             <textarea name="" id="" rows="5"></textarea>
           </div>
         </div>
-      </div>
-    </div>
+      </SidebarSection>
     );
   }
 }

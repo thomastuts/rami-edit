@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarSection from './sidebar-section';
 import SimpleSlider from '../simple-slider';
 
 export default class SidebarColorSection extends React.Component {
@@ -8,14 +9,7 @@ export default class SidebarColorSection extends React.Component {
 
   render() {
     return (
-    <div className="sidebar__content__section">
-      <div className="sidebar__content__section__header">
-        Colors
-        <div className="sidebar__content__section__header__toggle-icon">
-          <img src="img/angle-down.svg" />
-        </div>
-      </div>
-      <div className="sidebar__content__section__content">
+      <SidebarSection title={'Colors'}>
         <div className="input-group">
           <label className="input-group__label">Red</label>
           <div className="input-group__input">
@@ -42,8 +36,7 @@ export default class SidebarColorSection extends React.Component {
             <button>B&amp;W</button>
           </div>
         </div>
-      </div>
-    </div>
+      </SidebarSection>
     );
   }
 }
