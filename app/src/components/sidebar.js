@@ -9,6 +9,13 @@ export default class Sidebar extends React.Component {
     };
   }
 
+  toggleSidebar = () => {
+    console.log(this);
+    this.setState({
+      isVisible: !this.state.isVisible
+    });
+  };
+
   render() {
     let sidebarClasses = ['sidebar'];
 
@@ -18,7 +25,7 @@ export default class Sidebar extends React.Component {
 
     return (
       <div className={sidebarClasses.join(' ')}>
-        <div className="sidebar__close-anchor"></div>
+        <div className="sidebar__close-anchor" onClick={this.toggleSidebar}></div>
         <div className="sidebar__content"></div>
       </div>
     );

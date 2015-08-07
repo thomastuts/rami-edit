@@ -7,7 +7,7 @@ $sidebar-close-anchor-width: 16px;
   display: flex;
   position: relative;
   margin-left: $sidebar-close-anchor-width + 2;
-  margin-right: -$sidebar-width;
+  margin-right: -($sidebar-width - $sidebar-close-anchor-width - 2);
   transition: all .2s;
 
   &--visible {
