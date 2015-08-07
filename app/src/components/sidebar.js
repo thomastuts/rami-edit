@@ -1,6 +1,7 @@
 import React from 'react';
 import SidebarLightingSection from './sidebar/lighting';
 import SidebarColorSection from './sidebar/colors';
+import SidebarMetadataSection from './sidebar/metadata';
 
 export default class Sidebar extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ export default class Sidebar extends React.Component {
         <div className="sidebar__content">
           <SidebarLightingSection />
           <SidebarColorSection />
+          <SidebarMetadataSection />
         </div>
       </div>
     );

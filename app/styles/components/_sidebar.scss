@@ -72,9 +72,18 @@ $sidebar-section-header-height: 40px;
 .input-group__label {
   font-size: 12px;
   width: 84px;
+
+  &--top {
+    align-self: flex-start;
+  }
 }
 
 .input-group__input {
   flex: 1;
   align-items: center;
+  font-size: 12px;
+
+  &--ready-only {
+    opacity: 0.5;
+  }
 }
